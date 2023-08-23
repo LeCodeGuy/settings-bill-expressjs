@@ -51,7 +51,10 @@
                 </label>
                 <button
                   class="button-primary"
-                  type="submit"
+                  {{!-- {{log settings.smsCost}} --}}
+                  {{#if criticalLevelReached}}type="button"{{else}}type="submit"{{/if}}
+                  {{!-- {{#if settings.callCost}}type="submit"{{else}}type="button"{{/if}}
+                  {{#if settings.smsCost}}type="submit"{{else}}type="button"{{/if}} --}}
                   name="button"
                 >Add</button>
               </form>
@@ -73,7 +76,7 @@
                   <td>
                     <a href="/actions">Total</a>
                   </td>
-                  <td> R<span class="totalSettings">{{totals.grandTotal}}</span> </td>
+                  <td> R<span {{#if warningLevelReached}}class="warning"{{/if}}{{#if criticalLevelReached}}class="danger"{{/if}} class="totalSettings">{{totals.grandTotal}}</span> </td>
                 </tr>
               </table>
 

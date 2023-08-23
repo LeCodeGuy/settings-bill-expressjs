@@ -35,10 +35,12 @@ app.get('/', function (req, res) {
     res.render('index', {
         // setup the handlebars for reference in the html template
         settings: settingsBill.getSettings(),
-        totals: settingsBill.totals()
+        totals: settingsBill.totals(),
+        warningLevelReached: settingsBill.hasReachedWarningLevel(),
+        criticalLevelReached: settingsBill.hasReachedCriticalLevel()
     });
 });
-
+// * Settings Section
 app.post('/settings', function(req, res){
     // set the entered values in the factory function
     settingsBill.setSettings({
@@ -59,7 +61,8 @@ app.post('/action', function(req, res){
 
     // Capture the call type to add
     settingsBill.recordAction(req.body.actionType);
-
+    // settingsBill.hasReachedWarningLevel();
+    // settingsBill.hasReachedCriticalLevel();
     // Redirect back to root (home)
     res.redirect('/')
 });
