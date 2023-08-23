@@ -89,12 +89,12 @@ function SettingsBill() {
     }
 
     function totals() {
-        let smsTotal = getTotal('sms')
-        let callTotal = getTotal('call')
+        let smsTotal = Number(getTotal('sms')).toFixed(2)
+        let callTotal = Number(getTotal('call')).toFixed(2)
         return {
             smsTotal,
             callTotal,
-            grandTotal : grandTotal()
+            grandTotal : grandTotal().toFixed(2)
         }
     }
 
