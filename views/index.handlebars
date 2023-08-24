@@ -51,10 +51,7 @@
                 </label>
                 <button
                   class="button-primary"
-                  {{!-- {{log settings.smsCost}} --}}
-                  {{#if criticalLevelReached}}type="button"{{else}}type="submit"{{/if}}
-                  {{!-- {{#if settings.callCost}}type="submit"{{else}}type="button"{{/if}}
-                  {{#if settings.smsCost}}type="submit"{{else}}type="button"{{/if}} --}}
+                  {{#if disableAdd}}type="button"{{else}}type="submit"{{/if}}
                   name="button"
                 >Add</button>
               </form>

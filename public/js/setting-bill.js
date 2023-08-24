@@ -111,6 +111,13 @@ function SettingsBill() {
         return total >= criticalLevel;
     }
 
+    function disableAddButton(){
+        if(Number(callCost) == 0 || Number(smsCost) == 0 || hasReachedCriticalLevel()){
+            return true;
+        }
+        return false;
+    }
+
     return {
         setSettings,
         getSettings,
@@ -119,7 +126,8 @@ function SettingsBill() {
         actionsFor,
         totals,
         hasReachedWarningLevel,
-        hasReachedCriticalLevel
+        hasReachedCriticalLevel,
+        disableAddButton
     }
 }
 

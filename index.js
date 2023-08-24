@@ -37,7 +37,8 @@ app.get('/', function (req, res) {
         settings: settingsBill.getSettings(),
         totals: settingsBill.totals(),
         warningLevelReached: settingsBill.hasReachedWarningLevel(),
-        criticalLevelReached: settingsBill.hasReachedCriticalLevel()
+        criticalLevelReached: settingsBill.hasReachedCriticalLevel(),
+        disableAdd: settingsBill.disableAddButton()
     });
 });
 // * Settings Section
