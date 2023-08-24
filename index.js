@@ -51,9 +51,6 @@ app.post('/settings', function(req, res){
         criticalLevel: req.body.criticalLevel
     })
 
-    // Check that the settings updated correctly
-    console.log(settingsBill.getSettings());
-
     // Redirect back to root (home)
     res.redirect('/')
 });
@@ -62,8 +59,7 @@ app.post('/action', function(req, res){
 
     // Capture the call type to add
     settingsBill.recordAction(req.body.actionType);
-    // settingsBill.hasReachedWarningLevel();
-    // settingsBill.hasReachedCriticalLevel();
+    
     // Redirect back to root (home)
     res.redirect('/')
 });
